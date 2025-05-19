@@ -1,0 +1,14 @@
+MOV AX, 0X8705;
+MOV BX,0X978B;
+INC AX;
+INC AX;
+INC AX;
+DEC BX
+DEC BX
+MOV DX,AX	;store ax value in dx temporally
+ADD AX,BX
+MOV CX,AX
+MOV AX,DX
+SUB AX,BX
+MOV DX,AX
+

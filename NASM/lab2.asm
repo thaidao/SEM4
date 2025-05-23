@@ -1,0 +1,11 @@
+ORG 0X400
+MOV BX, 0x1234
+MOV AX, 0x3456
+ADD AX, BX
+INC AX
+DEC BX
+SUB AX, BX
+XCHG AX, BX; exchange the content of AX and BX
+MOV [0x0460], AX
+MOV [0x0462], BX
+INT3

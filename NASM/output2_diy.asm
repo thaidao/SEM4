@@ -21,7 +21,7 @@ MOV [0X466],DX			; higher word
 MOV AX, 0XAABB
 MOV [0X462],AX
 
-MOV AX, [0X462]
+;MOV AX, [0X462]
 MOV CX,0X0F				;divided by 0x0f
 DIV CX
 
@@ -33,8 +33,8 @@ ADD AX,[0X464]          ;calcuate the final result
 ;MOV DX,0X00FF
 
 ;count number of 1 in AX
-MOV CX,16 				; load counter
-MOV BX,0
+MOV CX,0x10 				; initialize loop counter = 16
+MOV BX,0x00
 
 ;prepare for the loop
 MOV SI,0X00 ; 0: check bit 1 in AX-lower word, 1: check bit 1 in DX higher word
@@ -44,7 +44,7 @@ check_bit:
 TEST AX,0x01			;kiem tra lenh nay sau logic commands co bi ghi de ko
 
 ;if the result is 1, increase counter 1
-JZ next_loop:
+JZ next_loop
 INC BX				;increase 1's counter
 
 next_loop:
